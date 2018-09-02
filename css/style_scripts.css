@@ -1,11 +1,19 @@
 form input {
   margin-right: 15px;
   margin-left: 0px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
-form label {
-  vertical-align: bottom;
+#executar {
+  margin-left: 120px;
+}
+
+form textarea {
+  vertical-align: middle;
+}
+
+form label, span {
+  vertical-align: middle;
 }
 
 header nav {
