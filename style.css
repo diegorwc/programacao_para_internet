@@ -19,3 +19,11 @@ header nav ul li {
   font-weight: bold;
   vertical-align: middle;
 }
+
+p {
+  text-align: justify;
+}
+
+.caption {
+  text-decoration: underline;
+}

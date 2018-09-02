@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-          <nav>            
+          <nav>
             <ul>
               <li>Administração</li>
               <li>Scripts</li>
@@ -16,5 +16,45 @@
             </ul>
           </nav>
         </header>
+        <section>
+          <article>
+            <h1>Ansible</h1>
+            <p>
+              Ansible é software utilizado para gerenciamento de configurações,
+              implantação de softwares e como orquestrador em geral. Existem
+              outros softwares similares (<a href="https://puppet.com/"
+              target="_blank">puppet</a> e <a href="https://saltstack.com/"
+              target="_blank">
+              saltstack</a> por exemplo), porém diferentemente do ansible estas
+              soluções precisam de um aplicativo cliente instalado em cada
+              máquina que será gerenciada. Já o Ansible utiliza ssh para
+              gerenciar computadores linux e
+              <a href="https://docs.microsoft.com/en-us/windows/desktop/winrm/portal"
+              target="_blank">
+              winrm</a> para hosts windows. Apesar de não necessitar de um cliente
+              são necessárias algumas configurações no winrm para que o ansible
+              seja capaz de gerenciar adequadamente uma máquina windows.
+              Para realizar as tarefas nos computadores desejados, o ansible utiliza
+              scripts escritos em <a href="http://yaml.org/" target="_blank">YAML</a>
+              que são chamados <em>Playbooks</em>.
+              <br /><br />Exemplo de playbook:
+              <pre>
+                <code>
+                  ---
+                  - hosts: droplets
+                  tasks:
+                    - name: Installs nginx web server
+                      apt: pkg=nginx state=installed update_cache=true
+                      notify:
+                        - start nginx
+
+                  handlers:
+                    - name: start nginx
+                    service: name=nginx state=starte
+                </code>
+              </pre>
+            </p>
+          </article>
+        </section>
     </body>
 </html>
