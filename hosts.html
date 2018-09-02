@@ -2,11 +2,11 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
-    <title>Scripts</title>
-    <link rel="stylesheet" href="css/style_scripts.css" type="text/css" />
+    <title>Hosts</title>
+    <link rel="stylesheet" href="css/style_hosts.css" type="text/css" />
   </head>
   <body>
-    <header>
+    <header id="topo">
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -18,27 +18,22 @@
       </nav>
     </header>
     <hr />
-    <form class="construtor" action="index.html" method="post">
-        <span>Hosts:</span>
-        <label for="lab11">Lab. 11 </label>
-        <input type="checkbox" name="lab11" id="lab11" />
-        <label for="lab12">Lab. 12 </label>
-        <input type="checkbox" name="lab12" id="lab12" />
-        <label for="lab13">Lab. 13 </label>
-        <input type="checkbox" name="lab13" id="lab13" />
-        <label for="lab14">Lab. 14 </label>
-        <input type="checkbox" name="lab14" id="lab14" />
-        <label for="lab15">Lab. 15 </label>
-        <input type="checkbox" name="lab15" id="lab15" />
-        <br /> <br />
-        <label for="task">Nome da task:</label>
-        <input type="text" name="task" id="task">
-        <br /> <br />
-        <label for="yaml">Código YAML:</label>
-        <textarea name="yaml" rows="20" cols="80"></textarea>
-        <br /> <br />
-        <input type="submit" id="executar" value="Executar">
-        <input type="submit" id="salvar" value="Salvar">
+    <form action="index.html" method="post">
+      <label for="adicionahosts">Adicionar hosts:</label>
+      <textarea name="adicionahosts" rows="20" cols="40"
+        placeholder="Insira um host por linha"></textarea>
+        <br />
+        <label for="grupo" class="labels">Grupo:</label>
+        <select>
+          <option value="lab11">Lab. 11</option>
+          <option value="lab12">Lab. 12</option>
+          <option value="lab13">Lab. 13</option>
+          <option value="lab14">Lab. 14</option>
+          <option value="lab15">Lab. 15</option>
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Salvar">
     </form>
     <footer>
       <hr />
