@@ -22,3 +22,7 @@ header nav ul li {
 p {
   text-align: justify;
 }
+
+footer a {
+  margin: 3px;
+}

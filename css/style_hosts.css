@@ -21,6 +21,7 @@ header nav ul {
 
 textarea {
   vertical-align: middle;
+  margin-bottom: 20px;
 }
 
 .labels {
@@ -34,4 +35,12 @@ select {
 input {
   margin-top: 5px;
   margin-left: 140px;
+}
+
+#footerhr {
+  margin-top: 5%;
+}
+
+.novo_grupo {
+  margin-left: 0px;
 }

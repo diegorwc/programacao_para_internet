@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Hosts</title>
     <link rel="stylesheet" href="css/style_hosts.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <header id="topo">
@@ -35,8 +36,16 @@
         <br />
         <input type="submit" value="Salvar">
     </form>
+    <hr />
+    <form action="index.html" method="post">
+      <h2>Criar novo grupo</h2>
+      <label for="nome">Nome do grupo:</label>
+      <input class="novo_grupo" type="text" name="nome"
+        placeholder="ex: Laboratório 11" />
+        <input class="novo_grupo" type="submit" value="Criar">
+    </form>
     <footer>
-      <hr />
+      <hr id="footerhr"/>
       <a href="#topo">Topo</a>
       <hr />
       <a href="https://github.com/diegorwc/programacao_para_internet" target="_blank">
