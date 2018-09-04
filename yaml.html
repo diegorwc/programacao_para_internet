@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style_yaml.css" type="text/css" />
+    <title>YAML</title>
+  </head>
+  <body>
+    <header id="topo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Administração</a></li>
+          <li><a href="scripts.html">Scripts</a></li>
+          <li><a href="hosts.html">Hosts</a></li>
+          <li><a href="yaml.html">YAML</a></li>
+          <li><a href="https://docs.ansible.com/" target="_blank">Documentação</a></li>
+        </ul>
+      </nav>
+    </header>
+      <hr />
+      <article>
+        <head>
+          <h2>YAML</h2>
+            <p>
+              YAML é um acrônimo recursivo em inglês para <em>YAML Ain't Markup Language</em>,
+              que em tradução livre significa: YAML não é uma linguagem de marcação.
+              Ansible utiliza este formato devido a sua relativa facilidade de compreensão.
+            </p>
+            <br />
+        </head>
+        <body>
+          <h3>YAML Básico</h3>
+          <p>
+            Para o ansible, todo arquivo YAML deve começar com uma lista. Cada item
+            na lista é também um lista de pares chave/valor que também é conhecido
+            como <em>hash</em> ou <em>dicionário</em>. Para utilizar ansible da
+            forma correta precisamos saber como escrever listas e dicionários em YAML.
+            Todos os arquivos YAML (quer estejam relacionados com o ansible ou não)
+            podem opcionalmente começar com --- e terminar com ... Este conjunto de
+            caracteres indica o começo e o fim (respectivamente) de um documento.
+            <br /><br />
+            Todos os membros de uma lista devem começar começar numa nova linha e
+            ter o mesmo nível de indentação, por exemplo:
+          </p>
+            <pre>
+              ---
+              fruits:
+                - Apple
+                - Orange
+                - Strawberry
+                - Mango
+              ...
+            </pre>
+            <p>
+              Um dicionário é representado simplesmente por um par <em>chave: valor.</em>
+              É necessário um espaço após os dois pontos.
+            </p>
+            <pre>
+              martin:
+                name: Martin D'vloper
+                job: Developer
+                skill: Elite
+            </pre>
+            <p>
+              Estruturas mais complicadas também são possíveis, como listas de dicionários,
+              dicionários que possuem listas como valores entre outras:
+            </p>
+            <pre>
+              -  martin:
+                name: Martin D'vloper
+                job: Developer
+                skills:
+                  - python
+                  - perl
+                  - pascal
+              -  tabitha:
+                name: Tabitha Bitumen
+                job: Developer
+                skills:
+                  - lisp
+                  - fortran
+                  - erlang
+            </pre>
+            <p>
+              Dicionários e listas também podem ser representados de forma abreviada:
+            </p>
+            <pre>
+              ---
+              martin: {name: Martin D'vloper, job: Developer, skill: Elite}
+              fruits: ['Apple', 'Orange', 'Strawberry', 'Mango']
+            </pre>
+        </body>
+      </article>
+      <footer>
+        <hr />
+        <a href="#topo">Topo</a>
+        <hr />
+        <a href="https://github.com/diegorwc/programacao_para_internet" target="_blank">
+          <img src="imagens/github-logo.png" alt="Logo do github" />
+        </a>
+        <br /> <br />
+        <div>Icons made by
+          <a href="https://www.flaticon.com/authors/dave-gandy"
+            title="Dave Gandy">Dave Gandy and Smashicons</a>
+          from
+          <a href="https://www.flaticon.com/"
+            title="Flaticon">www.flaticon.com</a>
+          is licensed by
+          <a href="http://creativecommons.org/licenses/by/3.0/"
+            title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
+          </a>
+        </div>
+      </footer>
+  </body>
+</html>
