@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style_playbooks.css">
+    <title>Playbooks</title>
+  </head>
+  <body>
+    <header id="topo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Administração</a></li>
+          <li><a href="scripts.html">Scripts</a></li>
+          <li><a href="hosts.html">Hosts</a></li>
+          <li><a href="yaml.html">YAML</a></li>
+          <li><a href="playbooks.html">Playbooks</a></li>
+          <li><a href="https://docs.ansible.com/" target="_blank">Documentação</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    <article>
+      <header>
+        <h2>Playbooks</h2>
+        <p>
+          Playbooks fazem parte da linguagem do ansible. São neles que são descritos
+          os passos necessários para realizar uma configuração ou a implantação
+          de um software, por exemplo.
+        </p>
+      </header>
+      <p>
+        Os playbooks foram desenvolvidos utilizando uma linguagem fácil para que,
+        além das máquinas, humanos também possam entender o seu conteúdo facilmente.
+        <br /><br />
+        Exemplos de playbooks:
+       </p>
+       <ol>
+          <li>
+            <pre>
+              ---
+              - hosts: webservers
+                vars:
+                  http_port: 80
+                  max_clients: 200
+                remote_user: root
+                tasks:
+                - name: ensure apache is at the latest version
+                  yum:
+                    name: httpd
+                    state: latest
+                - name: write the apache config file
+                  template:
+                    src: /srv/httpd.j2
+                    dest: /etc/httpd.conf
+                  notify:
+                    - restart apache
+                - name: ensure apache is running
+                  service:
+                    name: httpd
+                    state: started
+                handlers:
+                  - name: restart apache
+                    service:
+                      name: httpd
+                      state: restarted
+            </pre>
+          </li>
+          <li>
+            <pre>
+              ---
+              - name: Install Apache from an MSI
+                hosts: all
+
+                tasks:
+                  - name: Download the Apache installer
+                    win_get_url:
+                      url: 'http://mirror.cc.columbia.edu/pub/software/apache//httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi'
+                      dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'
+
+              - name: Install MSI
+                win_package:
+                  path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'
+                  state: present
+            </pre>
+          </li>
+          <li>
+            <pre>
+              ---
+              - name: Add a user
+                hosts: all
+                gather_facts: false
+                tasks:
+                  - name: Add User
+                  win_user:
+                    name: ansible
+                    password: "@ns1bl3"
+                    state: present
+            </pre>
+          </li>
+          <li>
+            <pre>
+              - name: Install IIS
+                hosts: all
+                gather_facts: false
+                tasks:
+                  - name: Install IIS
+                  win_feature:
+                    name: "Web-Server"
+                    state: present
+                    restart: yes
+                    include_sub_features: yes
+                    include_management_tools: yes
+            </pre>
+          </li>
+       </ol>
+       <p>
+         Estes e outros exemplos podem ser encontrados no
+         <a href="https://github.com/ansible/ansible-examples" target="_blank">
+           repositório do ansible no github
+         </a>
+         !
+       </p>
+    </article>
+    <footer>
+      <hr />
+      <a href="#topo">Topo</a>
+      <hr />
+      <a href="https://github.com/diegorwc/programacao_para_internet" target="_blank">
+        <img src="imagens/github-logo.png" alt="Logo do github" />
+      </a>
+      <br /> <br />
+      <div>Icons made by
+        <a href="https://www.flaticon.com/authors/dave-gandy"
+          title="Dave Gandy">Dave Gandy and Smashicons</a>
+        from
+        <a href="https://www.flaticon.com/"
+          title="Flaticon">www.flaticon.com</a>
+        is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
