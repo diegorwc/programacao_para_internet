@@ -22,3 +22,18 @@ p {
 footer a {
   margin: 3px;
 }
+
+table, th, td {
+  border: solid 1px;
+  border-collapse: collapse;
+  width: 70%;
+  text-align: center;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  width: 33%;
+}

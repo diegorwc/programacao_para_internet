@@ -8,12 +8,12 @@
     <meta name="author" content="Diego R. Wille C." />
     <link rel="icon" href="imagens/coding.png" />
     <meta name="robots" content="index,follow" />
-    <title>Scripts</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentação</title>
   </head>
   <body>
-    <header>
+    <header id="topo">
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -28,29 +28,42 @@
       </nav>
     </header>
     <hr />
-    <form class="construtor" action="index.html" method="post">
-        <span>Hosts:</span>
-        <label for="lab11">Lab. 11 </label>
-        <input type="checkbox" name="lab11" id="lab11" />
-        <label for="lab12">Lab. 12 </label>
-        <input type="checkbox" name="lab12" id="lab12" />
-        <label for="lab13">Lab. 13 </label>
-        <input type="checkbox" name="lab13" id="lab13" />
-        <label for="lab14">Lab. 14 </label>
-        <input type="checkbox" name="lab14" id="lab14" />
-        <label for="lab15">Lab. 15 </label>
-        <input type="checkbox" name="lab15" id="lab15" />
-        <br /> <br />
-        <label for="task">Nome da task:</label>
-        <input type="text" name="task" id="task">
-        <br /> <br />
-        <label for="yaml">Código YAML:</label>
-        <textarea name="yaml" rows="20" cols="80"></textarea>
-        <br /> <br />
-        <input type="submit" id="executar" value="Executar">
-        <input type="submit" id="salvar" value="Salvar">
-    </form>
+    <section>
+      <article>      
+        <table>
+          <thead>
+            <th></th>
+            <th>Github</th>
+            <th>Site Oficial</th>
+            <th>Documentação Oficial</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ansible</td>
+              <td>
+                <a href="https://github.com/ansible/ansible">
+                <img src="imagens/github-logo.png" alt="Logo do github"
+                title="Repositório do ansible no github"></a>
+              </td>
+              <td>
+                <a href="">
+                <img src="imagens/browser.png" alt="Icone de um browser"
+                title="Site oficial do ansible"></a>
+              </td>
+              <td>
+                <a href="https://docs.ansible.com/">
+                  <img src="imagens/contract.png" alt="Icone de uma página escrita"
+                  title="Documentação oficial do ansible">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
     <footer>
+      <hr />
+      <a href="#topo">Topo</a>
       <hr />
       <a href="https://github.com/diegorwc/programacao_para_internet"
       target="_blank"><img src="imagens/github-logo.png" alt="Logo do github"
@@ -64,6 +77,20 @@
       <a href="https://www.w3schools.com/html/default.asp" target="_blank"><img
         src="imagens/html5.png" alt="Logo do HTML5" target="_blank" height="24px"
         width="24px" title="Tutorial de HTML5 da w3schools" /></a>
+      <br /> <br />
+      <div>Icons made by
+        <a href="https://www.flaticon.com/authors/dave-gandy"
+          title="Dave Gandy">Dave Gandy</a>,
+          <a href="https://www.flaticon.com/authors/vectors-market"
+          title="Vectors Market">Vectors Market</a> and
+          <a href="http://www.freepik.com" title="Freepik">Freepik</a>
+        from
+        <a href="https://www.flaticon.com/"
+          title="Flaticon">www.flaticon.com</a>
+        is licensed by
+        <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
+        </a>
       </div>
     </footer>
   </body>

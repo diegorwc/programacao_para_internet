@@ -23,7 +23,7 @@
           <li><a href="yaml.html">YAML</a></li>
           <li><a href="playbooks.html">Playbooks</a></li>
           <li><a href="instalacao.html">Instalação</a></li>
-          <li><a href="https://docs.ansible.com/" target="_blank">Documentação</a></li>
+          <li><a href="documentacao.html">Documentação</a></li>
         </ul>
       </nav>
     </header>
@@ -42,9 +42,15 @@
         além das máquinas, humanos também possam entender o seu conteúdo facilmente.
         <br /><br />
         Exemplos de playbooks:
+        <hr />
+        <a href="#ex1">Exemplo 1</a>
+        <a href="#ex2">Exemplo 2</a>
+        <a href="#ex3">Exemplo 3</a>
+        <a href="#ex4">Exemplo 4</a>
+        <hr />
        </p>
        <ol>
-          <li>
+          <li id="ex1">
             <pre>
               ---
               - hosts: webservers
@@ -74,7 +80,7 @@
                       state: restarted
             </pre>
           </li>
-          <li>
+          <li id="ex2">
             <pre>
               ---
               - name: Install Apache from an MSI
@@ -92,7 +98,7 @@
                   state: present
             </pre>
           </li>
-          <li>
+          <li id="ex3">
             <pre>
               ---
               - name: Add a user
@@ -106,7 +112,7 @@
                     state: present
             </pre>
           </li>
-          <li>
+          <li id="ex4">
             <pre>
               - name: Install IIS
                 hosts: all
@@ -132,22 +138,18 @@
     </article>
     <footer>
       <hr />
-      <a href="#topo">Topo</a>
-      <hr />
-      <a href="https://github.com/diegorwc/programacao_para_internet" target="_blank">
-        <img src="imagens/github-logo.png" alt="Logo do github" />
-      </a>
-      <br /> <br />
-      <div>Icons made by
-        <a href="https://www.flaticon.com/authors/dave-gandy"
-          title="Dave Gandy">Dave Gandy and Smashicons</a>
-        from
-        <a href="https://www.flaticon.com/"
-          title="Flaticon">www.flaticon.com</a>
-        is licensed by
-        <a href="http://creativecommons.org/licenses/by/3.0/"
-          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
-        </a>
+      <a href="https://github.com/diegorwc/programacao_para_internet"
+      target="_blank"><img src="imagens/github-logo.png" alt="Logo do github"
+        title="Repositório deste projeto no github" /></a>
+      <a href="https://github.com/yaml" target="_blank">
+        <img src="imagens/yaml.png" alt="Logo do YAML" height="24px"
+        width="24px" title="Repositório do YAML no github" /></a>
+      <a href="https://github.com/ansible/ansible" target="_blank">
+        <img src="imagens/ansible.png" alt="Logo do Ansible" target="_blank"
+        height="24px" width="24px" title="Repositório do Ansible no github" /></a>
+      <a href="https://www.w3schools.com/html/default.asp" target="_blank"><img
+        src="imagens/html5.png" alt="Logo do HTML5" target="_blank" height="24px"
+        width="24px" title="Tutorial de HTML5 da w3schools" /></a>
       </div>
     </footer>
   </body>
