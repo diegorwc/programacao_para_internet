@@ -16,7 +16,7 @@
     <header id="topo">
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>          
+          <li><a href="index.html">Home</a></li>
           <li><a href="scripts.html">Scripts</a></li>
           <li><a href="hosts.html">Hosts</a></li>
           <li><a href="yaml.html">YAML</a></li>
@@ -27,74 +27,79 @@
       </nav>
     </header>
     <hr />
-    <header>
-      <h2>Como instalar o ansible</h2>
-    </header>
-    <p>
-      Por padrão ansible utiliza o protococlo SSH para gerenciar as máquinas.
-      Uma vez que o ansible estiver instalado, não será necessário adicionar
-      um banco de dados e também não é preciso iniciar
-      <a href="http://man7.org/linux/man-pages/man3/daemon.3.html"
-      target="_blank">daemons</a>.
-      Você precisa instalá-lo em apenas uma máquina e pode gerenciar diversos
-      computadores remotamente através deste servidor central. Quando ansible está
-      gerenciando máquinas remotas ele não deixa nenhum tipo de software instalado
-      ou rodando, então não é preciso atualizá-lo no cliente quando você realizar
-      um upgrade no servidor.
-    </p>
-    <h3>Requisitos necessários</h3>
-    <p>
-      Atualmente ansible pode rodar em qualquer host com python 2 (versões 2.6 ou 2.7)
-      ou python 3 (versão 3.5 ou acima) instalado, porém não é possível usar
-      um computador com windows como servidor. Red Hat, Debian, CentOS, OS X e
-      qualquer sistema operacional BSD (entre outros) são compatíveis com ansible.
-    </p>
-    <h3>Requerimentos para os clientes</h3>
-    <p>
-      Nos nós gerenciados, você precisa de uma maneira de se comunicar,
-      que normalmente é o ssh. Por padrão, isso usa o sftp. Se isso não estiver
-      disponível, você pode alternar para scp em ansible.cfg. Você também precisa
-      do Python 2 (versão 2.6 ou posterior) ou do Python 3 (versão 3.5 ou posterior).
-    </p>
-    <blockquote>
-      <em>Nota</em>
-          <br />
-          Se você tiver o SELinux habilitado em computadores remotos, você deverá
-          instalar <em>libselinux-python</em> neles antes de usar qualquer função
-          relacionada a cópia / arquivo / modelo no Ansible. Você pode usar o
-          módulo yum ou o módulo dnf no Ansible para instalar este pacote em hosts
-          que não possuirem. Por padrão, o Ansible usa o interpretador python
-          localizado em <em>/usr/bin/python</em> para executar seus módulos. No entanto,
-          algumas distribuições Linux podem ter apenas um interpretador do Python 3
-          instalado em <em>/usr/bin/python3</em> por padrão. Nesses sistemas, você pode ver
-          um erro como:
-          <br /><br />
-          <em>
-            <strong>
-              "module_stdout": "/bin/sh: /usr/bin/python: No such file or
-              directory\r\n"
-            </strong>
-            <br /><br />
-          </em>
-          você pode definir a variável de inventário
-          <strong>ansible_python_interpreter</strong>
-          para apontar para o executável de acordo com seu sistema
-          ou instalar um interpretador do Python 2.
-          Você ainda precisará definir <strong>ansible_python_interpreter</strong>
-          se o interpretador do Python 2 não estiver instalado em
-          <em>/usr/bin/python</em>.
-          O módulo "bruto" da Ansible (para executar comandos de maneira rápida)
-          e o módulo de script nem precisam do Python instalado. Então, tecnicamente,
-          você pode usar o Ansible para instalar uma versão compatível do Python usando
-          o módulo raw, que permite usar todo o resto. Por exemplo, se você precisar
-          fazer o bootstrap do Python 2 em um sistema baseado em RHEL,
-          você pode instalá-lo via: <br /><br />
-          <em>
-            <strong>
-              ansible myhost --sudo -m raw -a "yum install -y python2"
-            </strong>
-          </em>
-    </blockquote>
+    <section>
+      <h2>Instalação</h2>
+      <article>
+        <header>
+          <h3>Como instalar o ansible</h3>
+        </header>
+        <p>
+          Por padrão ansible utiliza o protococlo SSH para gerenciar as máquinas.
+          Uma vez que o ansible estiver instalado, não será necessário adicionar
+          um banco de dados e também não é preciso iniciar
+          <a href="http://man7.org/linux/man-pages/man3/daemon.3.html"
+          target="_blank">daemons</a>.
+          Você precisa instalá-lo em apenas uma máquina e pode gerenciar diversos
+          computadores remotamente através deste servidor central. Quando ansible está
+          gerenciando máquinas remotas ele não deixa nenhum tipo de software instalado
+          ou rodando, então não é preciso atualizá-lo no cliente quando você realizar
+          um upgrade no servidor.
+        </p>
+        <h3>Requisitos necessários</h3>
+        <p>
+          Atualmente ansible pode rodar em qualquer host com python 2 (versões 2.6 ou 2.7)
+          ou python 3 (versão 3.5 ou acima) instalado, porém não é possível usar
+          um computador com windows como servidor. Red Hat, Debian, CentOS, OS X e
+          qualquer sistema operacional BSD (entre outros) são compatíveis com ansible.
+        </p>
+        <h3>Requerimentos para os clientes</h3>
+        <p>
+          Nos nós gerenciados, você precisa de uma maneira de se comunicar,
+          que normalmente é o ssh. Por padrão, isso usa o sftp. Se isso não estiver
+          disponível, você pode alternar para scp em ansible.cfg. Você também precisa
+          do Python 2 (versão 2.6 ou posterior) ou do Python 3 (versão 3.5 ou posterior).
+        </p>
+        <blockquote>
+          <em>Nota</em>
+              <br />
+              Se você tiver o SELinux habilitado em computadores remotos, você deverá
+              instalar <em>libselinux-python</em> neles antes de usar qualquer função
+              relacionada a cópia / arquivo / modelo no Ansible. Você pode usar o
+              módulo yum ou o módulo dnf no Ansible para instalar este pacote em hosts
+              que não possuirem. Por padrão, o Ansible usa o interpretador python
+              localizado em <em>/usr/bin/python</em> para executar seus módulos. No entanto,
+              algumas distribuições Linux podem ter apenas um interpretador do Python 3
+              instalado em <em>/usr/bin/python3</em> por padrão. Nesses sistemas, você pode ver
+              um erro como:
+              <br /><br />
+              <em>
+                <strong>
+                  "module_stdout": "/bin/sh: /usr/bin/python: No such file or
+                  directory\r\n"
+                </strong>
+                <br /><br />
+              </em>
+              você pode definir a variável de inventário
+              <strong>ansible_python_interpreter</strong>
+              para apontar para o executável de acordo com seu sistema
+              ou instalar um interpretador do Python 2.
+              Você ainda precisará definir <strong>ansible_python_interpreter</strong>
+              se o interpretador do Python 2 não estiver instalado em
+              <em>/usr/bin/python</em>.
+              O módulo "bruto" da Ansible (para executar comandos de maneira rápida)
+              e o módulo de script nem precisam do Python instalado. Então, tecnicamente,
+              você pode usar o Ansible para instalar uma versão compatível do Python usando
+              o módulo raw, que permite usar todo o resto. Por exemplo, se você precisar
+              fazer o bootstrap do Python 2 em um sistema baseado em RHEL,
+              você pode instalá-lo via: <br /><br />
+              <em>
+                <strong>
+                  ansible myhost --sudo -m raw -a "yum install -y python2"
+                </strong>
+              </em>
+        </blockquote>
+      </article>
+    </section>
     <br/>
     <footer>
       <hr />
@@ -109,8 +114,8 @@
       <a href="https://github.com/ansible/ansible" target="_blank">
         <img src="imagens/ansible.png" alt="Logo do Ansible"
         height="24" width="24" title="Repositório do Ansible no github" /></a>
-      <a href="https://www.w3schools.com/html/default.asp" target="_blank"><img
-        src="imagens/html5.png" alt="Logo do HTML5" height="24"
+      <a href="https://www.w3schools.com/html/default.asp" target="_blank">
+        <img src="imagens/html5.png" alt="Logo do HTML5" height="24"
         width="24" title="Tutorial de HTML5 da w3schools" /></a>
       <br /> <br />
       <div>Icons made by
