@@ -31,10 +31,10 @@
     <form action="http://localhost" method="post">
       <label for="adicionahosts">Adicionar hosts:</label>
       <textarea name="adicionahosts" rows="20" cols="40"
-        placeholder="Insira um host por linha"></textarea>
+        id="adicionahosts" placeholder="Insira um host por linha"></textarea>
         <br />
         <label for="grupo" class="labels">Grupo:</label>
-        <select>
+        <select id="grupo">
           <option value="lab11">Lab. 11</option>
           <option value="lab12">Lab. 12</option>
           <option value="lab13">Lab. 13</option>
@@ -51,7 +51,7 @@
       <h2>Criar novo grupo</h2>
       <label for="nome">Nome do grupo:</label>
       <input class="novo_grupo" type="text" name="nome"
-        placeholder="ex: Laboratório 11" />
+        id="nome" placeholder="ex: Laboratório 11" />
         <input class="novo_grupo" type="submit" value="Criar">
     </form>
     <footer id="rodape">
@@ -62,15 +62,14 @@
       target="_blank"><img src="imagens/github-logo.png" alt="Logo do github"
         title="Repositório deste projeto no github" /></a>
       <a href="https://github.com/yaml" target="_blank">
-        <img src="imagens/yaml.png" alt="Logo do YAML" height="24px"
-        width="24px" title="Repositório do YAML no github" /></a>
+        <img src="imagens/yaml.png" alt="Logo do YAML" height="24"
+        width="24" title="Repositório do YAML no github" /></a>
       <a href="https://github.com/ansible/ansible" target="_blank">
-        <img src="imagens/ansible.png" alt="Logo do Ansible" target="_blank"
-        height="24px" width="24px" title="Repositório do Ansible no github" /></a>
+        <img src="imagens/ansible.png" alt="Logo do Ansible"
+        height="24" width="24" title="Repositório do Ansible no github" /></a>
       <a href="https://www.w3schools.com/html/default.asp" target="_blank"><img
-        src="imagens/html5.png" alt="Logo do HTML5" target="_blank" height="24px"
-        width="24px" title="Tutorial de HTML5 da w3schools" /></a>
-      </div>
+        src="imagens/html5.png" alt="Logo do HTML5" height="24"
+        width="24" title="Tutorial de HTML5 da w3schools" /></a>
     </footer>
   </body>
 </html>
