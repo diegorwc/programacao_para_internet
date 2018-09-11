@@ -44,3 +44,10 @@ input {
 .novo_grupo {
   margin-left: 0px;
 }
+
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
