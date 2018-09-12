@@ -44,3 +44,16 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+pre  {
+  counter-reset: line;
+}
+
+code {
+  counter-increment: line;
+}
+
+code:before {
+  content: counter(line) ".";
+  margin: 15px;
+}
