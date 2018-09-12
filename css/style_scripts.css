@@ -75,8 +75,23 @@ footer {
   text-align: center;
   border-radius: 8px;
   opacity: 0.6;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+#executar {
+  margin-left: 13%;
 }
 
 .button:hover {
   opacity: 1;
+}
+
+form label {
+  margin-left: 2%;
+}
+
+#yaml, #task {
+  vertical-align: middle;
+  margin-left: 1%;
 }
