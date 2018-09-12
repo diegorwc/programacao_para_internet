@@ -58,6 +58,11 @@ table {
 
 td {
   width: 33%;
+  padding: 1%;
+}
+
+th {
+  padding: 1%;
 }
 
 footer {
@@ -91,4 +96,10 @@ code:nth-child(-n+9):before {
 
 .width45 code {
   width: 45%;
+}
+
+
+.noborder {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
 }
