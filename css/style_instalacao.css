@@ -14,3 +14,7 @@ header nav ul li {
   font-weight: bold;
   vertical-align: middle;
 }
+
+nav {
+  text-align: center;
+}

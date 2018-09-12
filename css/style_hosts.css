@@ -11,8 +11,8 @@ header nav {
   height: 50px;
 }
 
-#grupo {
-
+nav {
+  text-align: center;
 }
 
 header nav ul {

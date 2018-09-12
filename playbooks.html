@@ -51,79 +51,77 @@
        <ol>
           <li id="ex1">
             <pre>
-              ---
-              - hosts: webservers
-                vars:
-                  http_port: 80
-                  max_clients: 200
-                remote_user: root
-                tasks:
-                - name: ensure apache is at the latest version
-                  yum:
-                    name: httpd
-                    state: latest
-                - name: write the apache config file
-                  template:
-                    src: /srv/httpd.j2
-                    dest: /etc/httpd.conf
-                  notify:
-                    - restart apache
-                - name: ensure apache is running
-                  service:
-                    name: httpd
-                    state: started
-                handlers:
-                  - name: restart apache
-                    service:
-                      name: httpd
-                      state: restarted
+               <code>---</code>
+               <code>- hosts: webservers</code>
+               <code>  vars:</code>
+               <code>    http_port: 80</code>
+               <code>    max_clients: 200</code>
+               <code>  remote_user: root</code>
+               <code>  tasks:</code>
+               <code>  - name: ensure apache is at the latest version</code>
+               <code>    yum:</code>
+               <code>      name: httpd</code>
+               <code>      state: latest</code>
+               <code>  - name: write the apache config file</code>
+               <code>    template:</code>
+               <code>      src: /srv/httpd.j2</code>
+               <code>      dest: /etc/httpd.conf</code>
+               <code>    notify:</code>
+               <code>      - restart apache</code>
+               <code>  - name: ensure apache is running</code>
+               <code>    service:</code>
+               <code>      name: httpd</code>
+               <code>      state: started</code>
+               <code>  handlers:</code>
+               <code>    - name: restart apache</code>
+               <code>      service:</code>
+               <code>        name: httpd</code>
+               <code>        state: restarted</code>
             </pre>
           </li>
           <li id="ex2">
-            <pre>
-              ---
-              - name: Install Apache from an MSI
-                hosts: all
-
-                tasks:
-                  - name: Download the Apache installer
-                    win_get_url:
-                      url: 'http://mirror.cc.columbia.edu/pub/software/apache//httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi'
-                      dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'
-
-              - name: Install MSI
-                win_package:
-                  path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'
-                  state: present
+            <pre class="oitenta">
+              <code>---</code>
+              <code>- name: Install Apache from an MSI</code>
+              <code>  hosts: all</code>
+              <code>  tasks:</code>
+              <code>    - name: Download the Apache installer</code>
+              <code>      win_get_url:</code>
+              <code>        url: 'http://mirror.cc.columbia.edu/pub/software/apache//httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi'</code>
+              <code>        dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code>
+              <code>- name: Install MSI</code>
+              <code>  win_package:</code>
+              <code>    path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code>
+              <code>    state: present</code>
             </pre>
           </li>
           <li id="ex3">
             <pre>
-              ---
-              - name: Add a user
-                hosts: all
-                gather_facts: false
-                tasks:
-                  - name: Add User
-                  win_user:
-                    name: ansible
-                    password: "@ns1bl3"
-                    state: present
+              <code>---</code>
+              <code>- name: Add a user</code>
+              <code>  hosts: all</code>
+              <code>  gather_facts: false</code>
+              <code>  tasks:</code>
+              <code>    - name: Add User</code>
+              <code>    win_user:</code>
+              <code>      name: ansible</code>
+              <code>      password: "@ns1bl3"</code>
+              <code>      state: present</code>
             </pre>
           </li>
           <li id="ex4">
             <pre>
-              - name: Install IIS
-                hosts: all
-                gather_facts: false
-                tasks:
-                  - name: Install IIS
-                  win_feature:
-                    name: "Web-Server"
-                    state: present
-                    restart: yes
-                    include_sub_features: yes
-                    include_management_tools: yes
+              <code>- name: Install IIS</code>
+              <code>  hosts: all</code>
+              <code>  gather_facts: false</code>
+              <code>  tasks:</code>
+              <code>    - name: Install IIS</code>
+              <code>    win_feature:</code>
+              <code>      name: "Web-Server"</code>
+              <code>      state: present</code>
+              <code>      restart: yes</code>
+              <code>      include_sub_features: yes</code>
+              <code>      include_management_tools: yes</code>
             </pre>
           </li>
        </ol>
