@@ -9,8 +9,8 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  margin: 10px;
-  font-family: Verdana;
+  /* margin: 10px; */
+  /* font-family: Verdana; */
   font-weight: bold;
   vertical-align: middle;
 }

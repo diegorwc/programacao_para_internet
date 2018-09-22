@@ -1,5 +1,8 @@
 nav a {
   opacity: 0.6;
+  border: 2px solid;
+  padding: 10px 20px;
+  margin: 1px;
 }
 
 nav a:visited, nav a:link{
@@ -21,8 +24,12 @@ body {
 
 header nav ul li {
   display: inline-block;
-  margin: 10px;
-  font-family: Verdana;
+  /* margin: 10px; */
+  /* font-family: Verdana; */
+  font-weight: bold;
+  vertical-align: middle;
+  display: inline-block;
+  /* margin: 10px; */
   font-weight: bold;
   vertical-align: middle;
 }
