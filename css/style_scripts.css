@@ -40,6 +40,10 @@ body {
     font-size: 18px;
 }
 
+i {
+  vertical-align: middle;
+}
+
 p {
   text-align: justify;
 }
