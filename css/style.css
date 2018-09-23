@@ -1,30 +1,25 @@
-nav a {
+header nav {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+header nav a {
   opacity: 0.6;
   border: 2px solid;
   padding: 10px 20px;
-  margin: 1px;  
+  margin: 1px;
 }
 
-nav a:visited, nav a:link{
+header nav a:visited, header nav a:link{
   color: black;
   text-decoration: none;
 }
 
-nav a:hover {
+header nav a:hover {
   opacity: 1;
-  color: blue;
+  color: black;
   text-decoration: underline;
-}
-
-body {
-  margin: 0 5%;
-  font-family: 'Overpass', 'Open Sans', sans-serif;
-  font-size: 18px;
-}
-
-header nav {
-  width: 100%;
-  height: 50px;
 }
 
 header nav ul {
@@ -38,16 +33,29 @@ header nav ul li {
   vertical-align: middle;
 }
 
-nav {
-  text-align: center;
+body {
+  margin: 0 5%;
+  font-family: 'Overpass', 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 p {
   text-align: justify;
 }
 
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
 footer a {
   margin: 3px;
+}
+
+table {
+  table-layout: fixed;
 }
 
 table, th, td {
@@ -55,10 +63,6 @@ table, th, td {
   border-collapse: collapse;
   width: 70%;
   text-align: center;
-}
-
-table {
-  table-layout: fixed;
 }
 
 table tr:hover {
@@ -72,13 +76,6 @@ td {
 
 th {
   padding: 1%;
-}
-
-footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
 }
 
 pre  {
@@ -103,21 +100,17 @@ code:nth-child(-n+9):before {
   content: '0'counter(line)".";
 }
 
-.width45 code {
-  width: 45%;
-}
-
 code:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.width45 code {
+  width: 45%;
 }
 
 .noborder {
   border-top: 1px solid white;
   border-left: 1px solid white;
-}
-
-div a {
-  color: blue;
 }
 
 a {

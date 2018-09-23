@@ -15,8 +15,6 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  /* margin: 10px; */
-  /* font-family: Verdana; */
   font-weight: bold;
   vertical-align: middle;
 }
@@ -35,7 +33,7 @@ nav a:visited, nav a:link{
 
 nav a:hover {
   opacity: 1;
-  color: blue;
+  color: black;
   text-decoration: underline;
 }
 
