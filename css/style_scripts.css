@@ -84,6 +84,7 @@ footer {
   opacity: 0.6;
   margin-left: 2%;
   margin-bottom: 2%;
+  cursor: pointer;
 }
 
 #executar {
