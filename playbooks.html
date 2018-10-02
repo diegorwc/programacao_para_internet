@@ -27,7 +27,7 @@
         </ul>
       </nav>
     </header>
-    <hr />
+    <!-- <hr /> -->
     <article>
       <header>
         <h2>Playbooks</h2>
@@ -81,7 +81,8 @@
             </pre>
           </li>
           <li id="ex2">
-            <pre class="noventa">
+            <pre class="overflowx">
+              <span>
               <code>---</code>
               <code>- name: Install Apache from an MSI</code>
               <code>  hosts: all</code>
@@ -93,7 +94,7 @@
               <code>- name: Install MSI</code>
               <code>  win_package:</code>
               <code>    path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code>
-              <code>    state: present</code>
+              <code>    state: present</code>              
             </pre>
           </li>
           <li id="ex3">
