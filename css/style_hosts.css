@@ -16,12 +16,14 @@ header nav a {
 
 header nav a:visited, header nav a:link {
   color: black;
+  background-color: white;
   text-decoration: none;
 }
 
 header nav a:hover {
   opacity: 1;
   color: black;
+  background-color: white;
   text-decoration: underline;
 }
 
@@ -33,7 +35,6 @@ header nav ul li {
   display: inline-block;
   font-weight: bold;
   vertical-align: middle;
-  display: inline-block;
 }
 
 body {
@@ -47,16 +48,22 @@ i {
 }
 
 textarea {
+  position: relative;
+  left: 1.6em;
   vertical-align: middle;
   margin-bottom: 1.25em;
 }
 
 .labels {
-  margin-left: 4.875em;
+  position: relative;
+  left: 5em;
 }
 
 select {
   margin-top: 0.3125em;
+  position: relative;
+  left: 7em;
+  /* visibility: hidden; */
 }
 
 #salvar_button {
@@ -72,7 +79,8 @@ input {
 }
 
 .novo_grupo {
-  margin-left: 0;
+  position: relative;
+  left: 2em;
 }
 
 footer {
@@ -93,6 +101,11 @@ footer {
   cursor: pointer;
 }
 
+#btnCriar {
+  position: relative;
+  left: 2em;
+}
+
 .button:hover {
   opacity: 1;
 }
@@ -103,4 +116,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+form label {
+  position: relative;
+  left: 1em;
 }
