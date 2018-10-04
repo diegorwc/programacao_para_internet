@@ -62,8 +62,7 @@ textarea {
 select {
   margin-top: 0.3125em;
   position: relative;
-  left: 7em;
-  /* visibility: hidden; */
+  left: 7em;  
 }
 
 #salvar_button {
@@ -121,4 +120,10 @@ a:hover {
 form label {
   position: relative;
   left: 1em;
+}
+
+#adicionahosts {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
