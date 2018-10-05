@@ -9,8 +9,7 @@ header nav ul {
 
 header nav ul li {
   display: inline-block;
-  margin: 0.625em;
-  font-family: Verdana;
+  margin: 0.625em;  
   font-weight: bold;
   vertical-align: middle;
 }

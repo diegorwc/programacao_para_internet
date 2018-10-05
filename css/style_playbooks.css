@@ -15,12 +15,14 @@ header nav a {
 
 header nav a:visited, header nav a:link {
   color: black;
+  background-color: white;
   text-decoration: none;
 }
 
 header nav a:hover {
   opacity: 1;
   color: black;
+  background-color: white;
   text-decoration: underline;
 }
 
@@ -43,6 +45,7 @@ body {
 nav {
   text-align: center;
   background-color: white;
+  color: black;
 }
 
 p {
@@ -64,9 +67,9 @@ table {
   table-layout: fixed;
 }
 
-td {
+/* td {
   width: 33%;
-}
+} */
 
 footer {
   left: 0;
@@ -80,10 +83,12 @@ footer {
   margin: 0.625em;
   padding: 0.25em 0.5em;
   color: black;
+  background-color: white;
 }
 
 .aborder:visited {
   color: gray;
+  background-color: white;
 }
 
 .aborder:hover {
@@ -97,6 +102,7 @@ pre  {
 code {
   counter-increment: line;
   background-color: #F2F2F2;
+  color: black;
   display: inline-block;
   width: 40%;
   border: 0.0625em solid white;
@@ -115,6 +121,7 @@ code:nth-child(-n+9):before {
 
 code:nth-child(even) {
   background-color: lightgray;
+  color: black;
 }
 
 #ex2 pre code {
