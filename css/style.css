@@ -51,8 +51,8 @@ p {
 footer {
   width: 100%;
   text-align: center;
-  position: relative;
-  top: 9em;
+  /* position: relative; */
+  /* top: 9em; */
 }
 
 footer a {
@@ -139,9 +139,9 @@ a:hover {
   text-decoration: underline;
 }
 
-article {
+/* article { */
   /* background-image: url("../imagens/bgblank.jpg"); */
-}
+/* } */
 
 section h2 {
   margin-top: 2em;
