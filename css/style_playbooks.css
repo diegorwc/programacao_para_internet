@@ -139,3 +139,37 @@ a:hover {
 #ex1:visited, #ex2:visited, #ex3:visited, #ex4:visited {
   opacity: 0.5;
 }
+
+@media only screen and (max-width: 600px) {
+  header nav ul li {
+    display: block;
+    margin: 1.5em;
+  }
+
+  code {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0.5em;
+    height: 2em;
+    display: block;
+  }
+
+  .aborder {
+    display: block;
+    text-align: center;
+    padding: 0.10em 0.2em;
+  }
+
+  #ex2 pre code {
+    width: 100%;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  ol li {
+    border-bottom: 0.2em dashed gray;
+  }
+}

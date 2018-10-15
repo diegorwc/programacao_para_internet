@@ -66,19 +66,19 @@
               que são chamados <em>Playbooks</em>.
               <br /><br />Exemplo de playbook:
             </p>
-              <pre>
-                  <code>---</code>
-                  <code>- hosts: droplets</code>
-                  <code>tasks:</code>
-                  <code>  - name: Installs nginx web server</code>
-                  <code>    apt: pkg=nginx state=installed update_cache=true</code>
-                  <code>    notify:</code>
-                  <code>      - start nginx</code>
-                  <code></code>
-                  <code>handlers:</code>
-                  <code>  - name: start nginx</code>
-                  <code>  service: name=nginx state=starte</code>
-              </pre>
+              <pre><!--
+              --><code>---</code><!--
+              --><code>- hosts: droplets</code><!--
+              --><code>tasks:</code><!--
+              --><code>  - name: Installs nginx web server</code><!--
+              --><code>    apt: pkg=nginx state=installed update_cache=true</code><!--
+              --><code>    notify:</code><!--
+              --><code>      - start nginx</code><!--
+              --><code></code><!--
+              --><code>handlers:</code><!--
+              --><code>  - name: start nginx</code><!--
+              --><code>  service: name=nginx state=starte</code><!--
+            --></pre>
               <!-- <img src="imagens/ansible-large.png" alt="Logo do Ansible" -->
               <!-- title="Logo do Ansible" /> -->
             <p>Além disso, ansible é uma ferramenta opensource desenvolvida pela

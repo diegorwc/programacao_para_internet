@@ -49,81 +49,81 @@
         <a href="#ex3" class="aborder">Exemplo 3</a>
         <a href="#ex4" class="aborder">Exemplo 4</a>
         <hr />
-       <ol>
-          <li id="ex1">
-            <pre>
-               <code>---</code>
-               <code>- hosts: webservers</code>
-               <code>  vars:</code>
-               <code>    http_port: 80</code>
-               <code>    max_clients: 200</code>
-               <code>  remote_user: root</code>
-               <code>  tasks:</code>
-               <code>  - name: ensure apache is at the latest version</code>
-               <code>    yum:</code>
-               <code>      name: httpd</code>
-               <code>      state: latest</code>
-               <code>  - name: write the apache config file</code>
-               <code>    template:</code>
-               <code>      src: /srv/httpd.j2</code>
-               <code>      dest: /etc/httpd.conf</code>
-               <code>    notify:</code>
-               <code>      - restart apache</code>
-               <code>  - name: ensure apache is running</code>
-               <code>    service:</code>
-               <code>      name: httpd</code>
-               <code>      state: started</code>
-               <code>  handlers:</code>
-               <code>    - name: restart apache</code>
-               <code>      service:</code>
-               <code>        name: httpd</code>
-               <code>        state: restarted</code>
-            </pre>
+       <ol><!--
+       --><li id="ex1"><!--
+       --><pre><!--
+            --><code>---</code><!--
+            --><code>- hosts: webservers</code><!--
+            --><code>  vars:</code><!--
+            --><code>    http_port: 80</code><!--
+            --><code>    max_clients: 200</code><!--
+            --><code>  remote_user: root</code><!--
+            --><code>  tasks:</code><!--
+            --><code>  - name: ensure apache is at the latest version</code><!--
+            --><code>    yum:</code><!--
+            --><code>      name: httpd</code><!--
+            --><code>      state: latest</code><!--
+            --><code>  - name: write the apache config file</code><!--
+            --><code>    template:</code><!--
+            --><code>      src: /srv/httpd.j2</code><!--
+            --><code>      dest: /etc/httpd.conf</code><!--
+            --><code>    notify:</code><!--
+            --><code>      - restart apache</code><!--
+            --><code>  - name: ensure apache is running</code><!--
+            --><code>    service:</code><!--
+            --><code>      name: httpd</code><!--
+            --><code>      state: started</code><!--
+            --><code>  handlers:</code><!--
+            --><code>    - name: restart apache</code><!--
+            --><code>      service:</code><!--
+            --><code>        name: httpd</code><!--
+            --><code>        state: restarted</code><!--
+        --></pre>
           </li>
           <li id="ex2">
-            <pre class="overflowx">              
-              <code>---</code>
-              <code>- name: Install Apache from an MSI</code>
-              <code>  hosts: all</code>
-              <code>  tasks:</code>
-              <code>    - name: Download the Apache installer</code>
-              <code>      win_get_url:</code>
-              <code>        url: 'http://mirror.cc.columbia.edu/pub/software/apache//httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi'</code>
-              <code>        dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code>
-              <code>- name: Install MSI</code>
-              <code>  win_package:</code>
-              <code>    path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code>
-              <code>    state: present</code>
-            </pre>
+            <pre class="overflowx"><!--
+            --><code>---</code><!--
+            --><code>- name: Install Apache from an MSI</code><!--
+            --><code>  hosts: all</code><!--
+            --><code>  tasks:</code><!--
+            --><code>    - name: Download the Apache installer</code><!--
+            --><code>      win_get_url:</code><!--
+            --><code>        url: 'http://mirror.cc.columbia.edu/pub/software/apache//httpd/binaries/win32/httpd-2.2.25-win32-x86-no_ssl.msi'</code><!--
+            --><code>        dest: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code><!--
+            --><code>- name: Install MSI</code><!--
+            --><code>  win_package:</code><!--
+            --><code>    path: 'C:\Users\Administrator\Downloads\httpd-2.2.25-win32-x86-no_ssl.msi'</code><!--
+            --><code>    state: present</code><!--
+        --></pre>
           </li>
           <li id="ex3">
-            <pre>
-              <code>---</code>
-              <code>- name: Add a user</code>
-              <code>  hosts: all</code>
-              <code>  gather_facts: false</code>
-              <code>  tasks:</code>
-              <code>    - name: Add User</code>
-              <code>    win_user:</code>
-              <code>      name: ansible</code>
-              <code>      password: "@ns1bl3"</code>
-              <code>      state: present</code>
-            </pre>
+            <pre><!--
+            --><code>---</code><!--
+            --><code>- name: Add a user</code><!--
+            --><code>  hosts: all</code><!--
+            --><code>  gather_facts: false</code><!--
+            --><code>  tasks:</code><!--
+            --><code>    - name: Add User</code><!--
+            --><code>    win_user:</code><!--
+            --><code>      name: ansible</code><!--
+            --><code>      password: "@ns1bl3"</code><!--
+            --><code>      state: present</code><!--
+         --></pre>
           </li>
           <li id="ex4">
-            <pre>
-              <code>- name: Install IIS</code>
-              <code>  hosts: all</code>
-              <code>  gather_facts: false</code>
-              <code>  tasks:</code>
-              <code>    - name: Install IIS</code>
-              <code>    win_feature:</code>
-              <code>      name: "Web-Server"</code>
-              <code>      state: present</code>
-              <code>      restart: yes</code>
-              <code>      include_sub_features: yes</code>
-              <code>      include_management_tools: yes</code>
-            </pre>
+            <pre><!--
+            --><code>- name: Install IIS</code><!--
+            --><code>  hosts: all</code><!--
+            --><code>  gather_facts: false</code><!--
+            --><code>  tasks:</code><!--
+            --><code>    - name: Install IIS</code><!--
+            --><code>    win_feature:</code><!--
+            --><code>      name: "Web-Server"</code><!--
+            --><code>      state: present</code><!--
+            --><code>      restart: yes</code><!--
+            --><code>      include_sub_features: yes</code><!--
+            --><code>      include_management_tools: yes</code><!--
+         --></pre>
           </li>
        </ol>
        <hr />
